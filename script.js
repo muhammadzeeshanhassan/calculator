@@ -22,8 +22,6 @@ function appendOperator(operator) {
     display.value = firstOperand + ' ' + operator + ' ';
 }
 
-
-
 function calculate() {
     if (currentInput === '' || lastOperator === '') return;
 
@@ -46,4 +44,52 @@ function operate(a, b, operator) {
         case '^': return Math.pow(a, b);
         default: return b;
     }
+}
+
+function sqrt() {
+    if (currentInput === '') return;
+    display.value = Math.sqrt(parseFloat(currentInput)).toFixed(4);
+    currentInput = display.value;
+}
+
+// Trignomatric Functions (sin, cos, tan)
+function sin() {
+    if (currentInput === '') return;
+    display.value = Math.sin(parseFloat(currentInput) * Math.PI / 180).toFixed(4);
+}
+
+function cos() {
+    if (currentInput === '') return;
+    display.value = Math.cos(parseFloat(currentInput) * Math.PI / 180).toFixed(4);
+}
+
+function tan() {
+    if (currentInput === '') return;
+    display.value = Math.tan(parseFloat(currentInput) * Math.PI / 180).toFixed(4);
+}
+
+// function power() {
+//     if (currentInput === '') return;
+//     firstOperand = parseFloat(currentInput);
+//     lastOperator = '^';
+//     currentInput = '';
+// }
+
+function pi() {
+    currentInput += Math.PI.toFixed(4);
+    display.value = currentInput;
+}
+
+
+// Clear Screen and Backspace Functions
+function clearDisplay() {
+    display.value = '';
+    currentInput = '';
+    firstOperand = null;
+    lastOperator = '';
+}
+
+function backspace() {
+    currentInput = currentInput.slice(0, -1); // -1 denotes the last element
+    display.value = currentInput;
 }
