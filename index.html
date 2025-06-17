@@ -10,7 +10,7 @@
 
 <body>
 
-    <div class="Calculator">
+    <div class="calculator">
         <h1>Project 1</h1>
 
         <!-- Display Area -->
@@ -29,25 +29,25 @@
             <button onclick="appendNumber()">7</button>
             <button onclick="appendNumber()">8</button>
             <button onclick="appendNumber()">9</button>
-            <button onclick="appendOperator('-')" class="yellow">-</button>
+            <button onclick="appendOperator('-')" class="green">-</button>
 
             <!-- 3rd Row -->
             <button onclick="appendNumber()">4</button>
             <button onclick="appendNumber()">5</button>
             <button onclick="appendNumber()">6</button>
-            <button onclick="appendOperator('+')" class="yellow">+</button>
+            <button onclick="appendOperator('+')" class="green">+</button>
 
             <!-- 4th Row -->
             <button onclick="appendNumber()">1</button>
             <button onclick="appendNumber()">2</button>
             <button onclick="appendNumber()">3</button>
-            <button onclick="calculate()" class="yellow">=</button>
+            <button onclick="calculate()" class="green">=</button>
 
             <!-- 5th Row -->
             <button onclick="appendNumber('0')">0</button>
             <button onclick="appendNumber('.')">.</button>
             <button onclick="sqrt()">√</button>
-            <button onclick="power()">^</button>
+            <button onclick="power()" class="green">^</button>
 
             <button onclick="sin()" class="yellow">sin</button>
             <button onclick="cos()" class="yellow">cos</button>
@@ -57,6 +57,7 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
