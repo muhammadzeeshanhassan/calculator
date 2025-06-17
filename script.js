@@ -34,7 +34,7 @@ function handleButtonClick(e) {
 
   if (!isNaN(value) || value === '.') {
     appendNumber(value);
-  } else if (['+', '-', '*', '/', '^'].includes(value)) {
+  } else if (['+', '-', '*', '/', '^'].includes(value)) {   // if + -> sum // fahdhassan1405
     appendOperator(value);
   } else if (value === '=') {
     calculate();
