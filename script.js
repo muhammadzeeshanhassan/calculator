@@ -68,13 +68,6 @@ function tan() {
     display.value = Math.tan(parseFloat(currentInput) * Math.PI / 180).toFixed(4);
 }
 
-// function power() {
-//     if (currentInput === '') return;
-//     firstOperand = parseFloat(currentInput);
-//     lastOperator = '^';
-//     currentInput = '';
-// }
-
 function pi() {
     currentInput += Math.PI.toFixed(4);
     display.value = currentInput;
