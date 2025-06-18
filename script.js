@@ -29,29 +29,55 @@ buttonLayout.forEach(row => {
   });
 });
 
+// function handleButtonClick(e) {
+//   const value = e.target.value;
+
+//   if (!isNaN(value) || value === '.') {
+//     appendNumber(value);
+//   } else if (['+', '-', '*', '/', '^'].includes(value)) {   // if + -> sum // fahdhassan1405
+//     appendOperator(value);
+//   } else if (value === '=') {
+//     calculate();
+//   } else if (value === 'C') {
+//     clearDisplay();
+//   } else if (value === 'DEL') {
+//     backspace();
+//   } else if (value === '√') {
+//     sqrt();
+//   } else if (value === 'sin') {
+//     sin();
+//   } else if (value === 'cos') {
+//     cos();
+//   } else if (value === 'tan') {
+//     tan();
+//   } else if (value === 'π') {
+//     pi();
+//   }
+// }
+
+const operationsMap = {
+  '+': () => appendOperator('+'),
+  '-': () => appendOperator('-'),
+  '*': () => appendOperator('*'),
+  '/': () => appendOperator('/'),
+  '^': () => appendOperator('^'),
+  '=': calculate,
+  'C': clearDisplay,
+  'DEL': backspace,
+  '√': sqrt,
+  'sin': sin,
+  'cos': cos,
+  'tan': tan,
+  'π': pi
+};
+
 function handleButtonClick(e) {
   const value = e.target.value;
 
   if (!isNaN(value) || value === '.') {
     appendNumber(value);
-  } else if (['+', '-', '*', '/', '^'].includes(value)) {   // if + -> sum // fahdhassan1405
-    appendOperator(value);
-  } else if (value === '=') {
-    calculate();
-  } else if (value === 'C') {
-    clearDisplay();
-  } else if (value === 'DEL') {
-    backspace();
-  } else if (value === '√') {
-    sqrt();
-  } else if (value === 'sin') {
-    sin();
-  } else if (value === 'cos') {
-    cos();
-  } else if (value === 'tan') {
-    tan();
-  } else if (value === 'π') {
-    pi();
+  } else if (operationsMap[value]) {
+    operationsMap[value]();
   }
 }
 
